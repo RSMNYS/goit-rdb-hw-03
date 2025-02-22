@@ -1,0 +1,9 @@
+
+ProductsSelectWithPrice : SELECT * FROM mydb.products WHERE price >= 10 AND price <= 50
+CategoriesSelectAll : SELECT * FROM mydb.categories
+CustomersSelectNameContact : SELECT name, contact FROM mydb.customers;
+EmployeesSelectAllWhereBirthdayLess1950 : SELECT * FROM mydb.employees WHERE BIRTHDAY < 1950;
+OldestEmployee : SELECT MIN(birthdate) as oldest_employee FROM mydb.employees;
+OldestEmployseeWithName : SELECT last_name, first_name, MIN(birthdate) as oldest_employee FROM mydb.employees GROUP BY last_name, first_name;
+ProductsPriceDesc : SELECT name, price, unit FROM mydb.products ORDER BY price DESC;
+CustomersNameStartsWithA : SELECT * FROM mydb.customers WHERE name LIKE 'A%';
