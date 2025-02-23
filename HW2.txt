@@ -1,0 +1,43 @@
+1. 
+
+-- вибрати всі стовпчики (За допомогою wildcard “*”) з таблиці products;
+SELECT * 
+FROM mydb.products;
+
+-- вибрати тільки стовпчики name, phone з таблиці shippers
+SELECT name, phone 
+FROM mydb.shippers;
+
+2. 
+
+-- середнє, максимальне та мінімальне значення стовпчика price таблички products
+
+SELECT AVG(price) as average_price, 
+       MAX(price) as max_price, 
+       MIN(price) as min_price
+FROM mydb.products;
+
+3. 
+
+-- унікальні значення колонок category_id та price таблиці products.
+
+SELECT DISTINCT category_id, price
+FROM mydb.products;
+
+4. 
+
+-- кількість продуктів (рядків), які знаходиться в цінових межах від 20 до 100
+
+SELECT COUNT(*) as products_count
+FROM mydb.products
+WHERE price >= 20 AND price <= 100;
+
+5. 
+
+-- кількість продуктів (рядків) та середню ціну (price) у кожного постачальника (supplier_id)
+
+SELECT supplier_id,
+       COUNT(*) as products_count,
+       AVG(price) as average_price
+FROM mydb.products
+GROUP BY supplier_id;
